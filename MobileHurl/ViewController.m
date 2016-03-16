@@ -103,6 +103,7 @@
     UITextField *parametersName = [[UITextField alloc] init];
     parametersName.translatesAutoresizingMaskIntoConstraints = NO;
     parametersName.textAlignment = NSTextAlignmentCenter;
+    parametersName.font = [UIFont systemFontOfSize:14.f];
     parametersName.borderStyle = UITextBorderStyleRoundedRect;
     parametersName.placeholder = @"Name";
     parametersName.alpha = 0.f;
@@ -112,6 +113,7 @@
     UITextField *parametersValue = [[UITextField alloc] init];
     parametersValue.translatesAutoresizingMaskIntoConstraints = NO;
     parametersValue.textAlignment = NSTextAlignmentCenter;
+    parametersValue.font = [UIFont systemFontOfSize:14.f];
     parametersValue.borderStyle = UITextBorderStyleRoundedRect;
     parametersValue.placeholder = @"Value";
     parametersValue.alpha = 0.f;
