@@ -13,6 +13,7 @@
 		A8D42CAD1C982BE800084941 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8D42CAB1C982BE800084941 /* Main.storyboard */; };
 		A8D42CAF1C982BE800084941 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8D42CAE1C982BE800084941 /* Assets.xcassets */; };
 		A8D42CB21C982BE800084941 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8D42CB01C982BE800084941 /* LaunchScreen.storyboard */; };
+		A8D42CBB1C99722C00084941 /* RestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A8D42CBA1C99722C00084941 /* RestManager.m */; };
 		ABE302916F3B60B8BA6DF53B /* libPods-MobileHurl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 016F24A1C00B2D64DD721B73 /* libPods-MobileHurl.a */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +29,8 @@
 		A8D42CAE1C982BE800084941 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A8D42CB11C982BE800084941 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A8D42CB31C982BE800084941 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A8D42CB91C99722C00084941 /* RestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestManager.h; sourceTree = "<group>"; };
+		A8D42CBA1C99722C00084941 /* RestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestManager.m; sourceTree = "<group>"; };
 		BB2AF275DA8D4D7CAB780E24 /* Pods-MobileHurl.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileHurl.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MobileHurl/Pods-MobileHurl.debug.xcconfig"; sourceTree = "<group>"; };
 		D07C990692F9B09EFE278A5C /* Pods-MobileHurl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileHurl.release.xcconfig"; path = "Pods/Target Support Files/Pods-MobileHurl/Pods-MobileHurl.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -84,6 +87,8 @@
 			children = (
 				A8D42CA51C982BE800084941 /* AppDelegate.h */,
 				A8D42CA61C982BE800084941 /* AppDelegate.m */,
+				A8D42CB91C99722C00084941 /* RestManager.h */,
+				A8D42CBA1C99722C00084941 /* RestManager.m */,
 				A8D42CA81C982BE800084941 /* ViewController.h */,
 				A8D42CA91C982BE800084941 /* ViewController.m */,
 				A8D42CAB1C982BE800084941 /* Main.storyboard */,
@@ -226,6 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A8D42CAA1C982BE800084941 /* ViewController.m in Sources */,
+				A8D42CBB1C99722C00084941 /* RestManager.m in Sources */,
 				A8D42CA71C982BE800084941 /* AppDelegate.m in Sources */,
 				A8D42CA41C982BE800084941 /* main.m in Sources */,
 			);
