@@ -25,24 +25,31 @@
 
 - (void)getRequestToURL:(NSURL*)url
               withParam:(NSDictionary*)param
-                success:(void(^)(NSDictionary *result))success
+                success:(void(^)(NSString *result))success
                 failure:(void(^)(NSError *error))failure {
     
     AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:url];
+    [client setDefaultHeader:@"" value:@""];
+    
     RKObjectManager *objectManager = [[RKObjectManager alloc] initWithHTTPClient:client];
     
     RKObjectMapping *mapping = [RKObjectMapping mappingForClass:[NSDictionary class]];
     RKResponseDescriptor *responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:mapping method:RKRequestMethodAny pathPattern:nil keyPath:nil statusCodes:nil];
     [objectManager addResponseDescriptor:responseDescriptor];
     
+    
     [objectManager
      getObjectsAtPath:@""
      parameters:param
      success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+         
          NSError *error = nil;
          NSDictionary* json = [NSJSONSerialization JSONObjectWithData:operation.HTTPRequestOperation.responseData options:NSJSONReadingMutableLeaves error:&error];
+         NSString *result = [NSString stringWithFormat:@"Status code = %ld\n\nBody = \n%@",
+                             operation.HTTPRequestOperation.response.statusCode,
+                             json];
          if (success) {
-             success(json);
+             success(result);
          }
      } failure:^(RKObjectRequestOperation *operation, NSError *error) {
          if (failure) {
