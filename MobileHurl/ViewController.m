@@ -152,13 +152,6 @@
 
 - (IBAction)requestButtonClickAction:(id)sender {
     
-//    UIViewController *vc = [[UIViewController alloc] init];
-//    vc.view.backgroundColor = [UIColor whiteColor];
-//    
-//    [self.navigationController pushViewController:vc animated:YES];
-    
-    
-    
     NSURL *url = [NSURL URLWithString:self.URLTextField.text];
     
     NSMutableDictionary *param = [NSMutableDictionary dictionary];
@@ -168,18 +161,31 @@
         [param setValue:value forKey:key];
     }
     
-    [[RestManager sharedManager] getRequestToURL:url withParam:param success:^(NSString *result) {
-        
-        ResultViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"ResultViewController"];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [vc.textView setText:result];
-        });
-        [self.navigationController pushViewController:vc animated:YES];
-        vc.title = @"Response";
-        
-    } failure:^(NSError *error) {
-        NSLog(@"%@", error);
-    }];
+    NSMutableDictionary *headers = [NSMutableDictionary dictionary];
+    for (NSUInteger i = 0; i < self.headersNameArray.count; i++) {
+        NSString *value = [[self.headersValueArray objectAtIndex:i] text];
+        NSString *key = [[self.headersNameArray objectAtIndex:i] text];
+        [headers setValue:value forKey:key];
+    }
+    
+    [[RestManager sharedManager]
+     getRequestToURL:url
+     withParam:param
+     headers:headers
+     success:^(NSString *result) {
+         
+         ResultViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"ResultViewController"];
+         
+         dispatch_async(dispatch_get_main_queue(), ^{
+             [vc.textView setText:result];
+         });
+         
+         [self.navigationController pushViewController:vc animated:YES];
+         vc.title = @"Response";
+         
+     } failure:^(NSError *error) {
+         NSLog(@"%@", error);
+     }];
 }
 
 

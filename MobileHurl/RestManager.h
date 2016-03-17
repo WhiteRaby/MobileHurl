@@ -12,5 +12,5 @@
 
 + (RestManager*)sharedManager;
 
-- (void)getRequestToURL:(NSURL*)url withParam:(NSDictionary*)param success:(void(^)(NSString *result))success failure:(void(^)(NSError *error))failure;
+- (void)getRequestToURL:(NSURL*)url withParam:(NSDictionary*)param headers:(NSDictionary*)headers success:(void(^)(NSString *result))success failure:(void(^)(NSError *error))failure;
 @end
