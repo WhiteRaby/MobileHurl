@@ -88,14 +88,10 @@
 		A8D42CA11C982BE800084941 /* MobileHurl */ = {
 			isa = PBXGroup;
 			children = (
+				A8D42CC21C9AB89000084941 /* ViewController */,
+				A8D42CC31C9AB8C800084941 /* Helper */,
 				A8D42CA51C982BE800084941 /* AppDelegate.h */,
 				A8D42CA61C982BE800084941 /* AppDelegate.m */,
-				A8D42CB91C99722C00084941 /* RestManager.h */,
-				A8D42CBA1C99722C00084941 /* RestManager.m */,
-				A8D42CA81C982BE800084941 /* ViewController.h */,
-				A8D42CA91C982BE800084941 /* ViewController.m */,
-				A8D42CBF1C9AAA0C00084941 /* ResultViewController.h */,
-				A8D42CC01C9AAA0C00084941 /* ResultViewController.m */,
 				A8D42CAB1C982BE800084941 /* Main.storyboard */,
 				A8D42CAE1C982BE800084941 /* Assets.xcassets */,
 				A8D42CB01C982BE800084941 /* LaunchScreen.storyboard */,
@@ -111,6 +107,26 @@
 				A8D42CA31C982BE800084941 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A8D42CC21C9AB89000084941 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A8D42CA81C982BE800084941 /* ViewController.h */,
+				A8D42CA91C982BE800084941 /* ViewController.m */,
+				A8D42CBF1C9AAA0C00084941 /* ResultViewController.h */,
+				A8D42CC01C9AAA0C00084941 /* ResultViewController.m */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		A8D42CC31C9AB8C800084941 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				A8D42CB91C99722C00084941 /* RestManager.h */,
+				A8D42CBA1C99722C00084941 /* RestManager.m */,
+			);
+			name = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
