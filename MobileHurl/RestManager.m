@@ -38,6 +38,9 @@
     RKResponseDescriptor *responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:mapping method:RKRequestMethodAny pathPattern:nil keyPath:nil statusCodes:nil];
     [objectManager addResponseDescriptor:responseDescriptor];
     
+    for (NSString *key in headers) {
+        [objectManager.HTTPClient setDefaultHeader:key value:headers[key]];
+    }
     
     [objectManager
      getObjectsAtPath:@""
