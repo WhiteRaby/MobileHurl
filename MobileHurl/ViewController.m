@@ -10,7 +10,7 @@
 #import "RestManager.h"
 #import "ResultViewController.h"
 
-@interface ViewController () 
+@interface ViewController () <UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *heightConstraint;
 @property (weak, nonatomic) IBOutlet UIView *contentView;
@@ -188,8 +188,12 @@
      }];
 }
 
+#pragma mark - UITextFieldDelegate
 
-
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return YES;
+}
 
 #pragma mark - TextFieldPair
 
@@ -208,6 +212,7 @@
     parametersName.borderStyle = UITextBorderStyleRoundedRect;
     parametersName.placeholder = @"Name";
     parametersName.alpha = 0.f;
+    parametersName.delegate = self;
     [mainView addSubview:parametersName];
     [parametersNameArray addObject:parametersName];
     
@@ -218,6 +223,7 @@
     parametersValue.borderStyle = UITextBorderStyleRoundedRect;
     parametersValue.placeholder = @"Value";
     parametersValue.alpha = 0.f;
+    parametersValue.delegate = self;
     [mainView addSubview:parametersValue];
     [parametersValueArray addObject:parametersValue];
     
